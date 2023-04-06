@@ -15,8 +15,6 @@ public class Program
 				}
 			mov++;
 		}
-		if (i == number)
-			p_answer= true;
 		System.out.println(p_answer+ "\t" + mov);
 	}
 

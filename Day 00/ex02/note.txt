@@ -1,0 +1,1 @@
+esplode su non numeri ma fino a quando non si capisce la questione try/catch
