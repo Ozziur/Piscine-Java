@@ -1,7 +1,7 @@
 public class Program
 {
 	public static void main(String[] x){
-		int number = 1111111;
+		int number = 479598;
 		int sum = 0;
 
 		sum += number % 10;
