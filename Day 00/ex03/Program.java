@@ -67,7 +67,9 @@ public class Program {
 				System.err.println("Illegal Argument");
 				System.exit(-1);
 			}
-			min = (tmp < min) ? tmp : min;
+			if(tmp < min){
+				min = tmp;
+			}
 		}
 		scanner.nextLine();
 		return (min);
