@@ -14,28 +14,28 @@ public class Program {
 				System.err.println("Illegal Argument");
 				System.exit(-1);
 			}
-			memory = packGrade(getMinGrade(scanner), memory, week);
+			memory = save(readNumber(scanner), memory, week);
 			week++;
 			inputWeek = scanner.nextLine();
 		}
 		for (int i = 1; i < week; i++) {
 			System.out.print("Week " + i + " ");
-			putGraph(unpackGrade(i, memory));
+			printGraph(decrypt(i, memory));
 		}
 	}
 
-	public static long packGrade(int minGrade, long memory, int index) {
+	public static long save(int min, long memory, int index) {
 		long ret;
-		long powTen = 1;
+		long pow = 1;
 
 		for (int i = 1; i < index; i++) {
-			powTen *= 10;
+			pow *= 10;
 		}
-		ret = memory + (minGrade * powTen);
+		ret = memory + (min * pow);
 		return (ret);
 	}
 
-	public static int unpackGrade(int index, long memory)	{
+	public static int decrypt(int index, long memory)	{
 		int ret;
 
 		for (int i = 1; i < index; i++) {
@@ -45,15 +45,15 @@ public class Program {
 		return (ret);
 	}
 
-	private static void putGraph(int minGrade) {
+	private static void printGraph(int min) {
 
-		for (int i = 0; i < minGrade; i++) {
+		for (int i = 0; i < min; i++) {
 			System.out.print("=");
 		}
 		System.out.println(">");
 	}
 
-	private static int getMinGrade(Scanner scanner) {
+	private static int readNumber(Scanner scanner) {
 		int min = scanner.nextInt();
 		if (min <=0 || min > 9) {
 			System.err.println("Illegal Argument");
